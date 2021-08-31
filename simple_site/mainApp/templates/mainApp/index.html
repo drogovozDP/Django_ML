@@ -1,0 +1,31 @@
+{% extends "mainApp/base.html" %}
+
+{% block title %}
+Django
+{% endblock %}
+
+{% block body %}
+<div class="main">
+    <div class="col">
+        <h1>Линейная регрессия</h1>
+        <h4>
+            Данная модель предсказывает приблизительное время поездки <br> на такси основываясь на то какой сейчас день и час.
+        </h4>
+    </div>
+    <div class="col">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <table>
+                {{ form }}
+            </table>
+            <input type="submit">
+        </form>
+        {% if message %}
+            <p>Примерное время: {{ message }} мин.</p>
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}
+
